@@ -1,0 +1,12 @@
+<div class="container">
+	<form [formGroup] = "formdata" (ngSubmit)="onClickSubmit(formdata.value)">
+		<input type="text" class="fortextbox" name="Title" placeholder="title" formControlName="Title">
+		<br/>
+
+		<input type="text" class="fortextbox" name="Body" placeholder="body" formControlName="Body">
+		<br/>
+
+		<input type="submit" class="forsubmit" value="Submit">
+	</form>
+</div>
+
