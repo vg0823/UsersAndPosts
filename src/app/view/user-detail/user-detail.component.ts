@@ -10,14 +10,13 @@ import { ActivatedRoute } from '@angular/router';
 export class UserDetailComponent implements OnInit {
   
   response: any;
-  public userDetail: User;
+  user: User ;
   constructor(private rest: RestService, private route:ActivatedRoute) { }
 
   ngOnInit() {
   	const id = this.route.snapshot.paramMap.get('id');
   	this.rest.getUser(id).subscribe(result => {
-  		this.userDetail = result;
-  		console.log(result);
+  		this.user = result;
   	});
   }
 

@@ -26,6 +26,7 @@ export class RestService {
   }
 
   insert(post){
+  	console.log(post);
   	return this.http.post(this.API_URL+'posts', post);
   }
 

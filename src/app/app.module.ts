@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule} from '@angular/common/http';
-import { MatTabsModule, MatTableModule } from '@angular/material';
+import { MatTabsModule } from '@angular/material';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -19,7 +19,6 @@ import { RestService } from './rest.service';
     MatTabsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    MatTableModule
   ],
   providers: [
   	RestService

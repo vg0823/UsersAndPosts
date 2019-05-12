@@ -1,19 +1,25 @@
-<div style='text-align:center'>
-	<h1>Users Detail</h1>
-</div>
-<div class="container">
-	<p><strong>Id:</strong>{{userDetail.id}}</p>
-	<p><strong>Name:</strong>{{userDetail.name}}</p>
-	<p><strong>Username:</strong>{{userDetail.username}}</p>
-	<p><strong>Email:</strong>{{userDetail.email}}</p>
-	<p><strong>Phone:</strong>{{userDetail.phone}}</p>
-    <p><strong>Website:</strong>{{userDetail.website}}</p>
-    <p><strong>Company:</strong>{{userDetail.company.name}}</p>
-    <p><strong>Address:</strong>
-    	{{userDetail.address.street}}<br/>
-    	{{userDetail.address.suite}}<br/>
-    	{{userDetail.address.city}}<br/>
-    	{{userDetail.address.zipcode}}<br/>
-	</p>
+<ng-container *ngIf="user && user?.name;else userNotFound">
+	<h3>Username: {{user.username}}</h3>
+	<dl>
+		<dt>Name: </dt>
+		<dd>{{user.name}}</dd>
 
-</div>
+		<dt>Email: </dt>
+		<dd>{{user.email}}</dd>
+
+		<dt>Phone: </dt>
+		<dd>{{user.phone}}</dd>
+
+		<dt>Website:</dt>
+		<dd>{{user.website}}</dd>
+		<dt>Company:</dt>
+		<dd>{{user.company.name}}</dd>
+
+		<dt>Address:</dt>
+		<dd>{{user.address.street +", " + user.address.city}}</dd>
+	</dl>
+
+</ng-container>
+<ng-template #userNotFound>
+	<p>User Not found</p>
+</ng-template>

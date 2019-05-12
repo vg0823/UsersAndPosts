@@ -11,8 +11,8 @@ import { User } from '../../model/user';
 export class UsersComponent implements OnInit {
 
   response: any;
-  public dataSource: User[];
-  public columnsToDisplay: any[];
+  dataSource: User[] = [];
+  columnsToDisplay: any[] = [];
 
   constructor(private rest: RestService) {
 
